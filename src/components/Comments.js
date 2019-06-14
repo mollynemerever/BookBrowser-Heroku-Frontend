@@ -30,7 +30,9 @@ export default class Comments extends Component {
   editComment = e => {
     //post to comments table
     e.preventDefault();
-    let url = `http://localhost:3001/comments/${this.state.commentId}`;
+    let url = `https://bookbrowser-app-api.herokuapp.com/comments/${
+      this.state.commentId
+    }`;
     let config = {
       method: "PATCH",
       headers: {
@@ -53,7 +55,9 @@ export default class Comments extends Component {
     //patch to comments table
     e.preventDefault();
     this.closeConfirm();
-    let url = `http://localhost:3001/comments/${this.state.commentId}`;
+    let url = `https://bookbrowser-app-api.herokuapp.com/comments/${
+      this.state.commentId
+    }`;
     let config = {
       method: "PATCH",
       headers: {
@@ -70,7 +74,9 @@ export default class Comments extends Component {
   };
 
   deleteUserCommentInstance = () => {
-    let url = `http://localhost:3001/bookcommentusers/${this.state.id}`;
+    let url = `https://bookbrowser-app-api.herokuapp.com/bookcommentusers/${
+      this.state.id
+    }`;
     let config = {
       method: "PATCH",
       headers: {

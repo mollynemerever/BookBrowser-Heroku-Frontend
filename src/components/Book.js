@@ -36,7 +36,8 @@ export default class Book extends Component {
 
   saveBook = e => {
     e.preventDefault();
-    let url = "http://localhost:3001/books";
+
+    let url = "https://bookbrowser-app-api.herokuapp.com/books";
     let config = {
       method: "POST",
       headers: {
@@ -60,7 +61,7 @@ export default class Book extends Component {
 
   newUsersBooksInstance = book => {
     //save to usersbooks table
-    let url = "http://localhost:3001/userbooks";
+    let url = "https://bookbrowser-app-api.herokuapp.com/userbooks";
     let config = {
       method: "POST",
       headers: {
@@ -102,7 +103,7 @@ export default class Book extends Component {
   removeBook = (e, userbookId) => {
     e.preventDefault();
     this.closeConfirm();
-    let url = `http://localhost:3001/userbooks/${userbookId}`;
+    let url = `https://bookbrowser-app-api.herokuapp.com/userbooks/${userbookId}`;
     let config = {
       method: "PATCH",
       headers: {
@@ -121,7 +122,7 @@ export default class Book extends Component {
   updateReadStatus = (e, userbookId) => {
     e.preventDefault();
     this.updateReadState();
-    let url = `http://localhost:3001/userbooks/${userbookId}`;
+    let url = `https://bookbrowser-app-api.herokuapp.com/userbooks/${userbookId}`;
     let config = {
       method: "PATCH",
       headers: {
@@ -140,7 +141,7 @@ export default class Book extends Component {
   saveBookToAnotherUser = e => {
     //fired when user saves book to their list from another profile
     let currentUser = this.props.user.currentUser.id;
-    let url = "http://localhost:3001/userbooks";
+    let url = "https://bookbrowser-app-api.herokuapp.com/userbooks";
     let config = {
       method: "POST",
       headers: {

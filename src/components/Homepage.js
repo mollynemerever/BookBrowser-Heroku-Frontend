@@ -17,7 +17,8 @@ export default class Homepage extends Component {
   };
 
   fetchFollowing = () => {
-    let url = "http://localhost:3001/userfollowerrelationships";
+    let url =
+      "https://bookbrowser-app-api.herokuapp.com/userfollowerrelationships";
     fetch(url)
       .then(resp => resp.json())
       .then(data => {
@@ -38,7 +39,7 @@ export default class Homepage extends Component {
 
   getFollowingUserInfo = array => {
     array.forEach(id => {
-      let url = `http://localhost:3001/users/${id}`;
+      let url = `https://bookbrowser-app-api.herokuapp.com/users/${id}`;
       fetch(url)
         .then(resp => resp.json())
         .then(data => {
@@ -53,7 +54,8 @@ export default class Homepage extends Component {
     //remove following relationship in db
     e.preventDefault();
     this.setState({ user_followIds: "", userFollowsDetail: "" });
-    let url = "http://localhost:3001/userfollowerrelationships";
+    let url =
+      "https://bookbrowser-app-api.herokuapp.com/userfollowerrelationships";
     let config = {
       method: "POST",
       headers: {

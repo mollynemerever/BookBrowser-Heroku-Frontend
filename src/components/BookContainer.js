@@ -39,7 +39,7 @@ export default class BookContainer extends Component {
   };
 
   getBooks = userId => {
-    let url = `http://localhost:3001/users/${userId}`;
+    let url = `https://bookbrowser-app-api.herokuapp.com/users/${userId}`;
     fetch(url)
       .then(resp => resp.json())
       .then(data => {

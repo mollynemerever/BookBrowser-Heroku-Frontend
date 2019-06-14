@@ -12,7 +12,8 @@ export default class Person extends Component {
   handleClick = (e, following_id) => {
     //create new following relationship in db
     e.preventDefault();
-    let url = "http://localhost:3001/userfollowerrelationships";
+    let url =
+      "https://bookbrowser-app-api.herokuapp.com/userfollowerrelationships";
     let config = {
       method: "POST",
       headers: {

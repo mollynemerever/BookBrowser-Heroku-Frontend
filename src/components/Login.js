@@ -35,7 +35,7 @@ export default class Login extends Component {
   };
 
   checkExistingUser = userObj => {
-    let url = "http://localhost:3001/users";
+    let url = "https://bookbrowser-app-api.herokuapp.com/users";
     let config = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
