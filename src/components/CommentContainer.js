@@ -17,7 +17,7 @@ export default class CommentContainer extends Component {
 
   getBookCommentInstances = () => {
     this.setState({ comments: "" }); //clear out after create new comment
-    let url = "http://localhost:3001/bookcommentusers";
+    let url = "https://bookbrowser-app-api.herokuapp.com/bookcommentusers";
     fetch(url)
       .then(resp => resp.json())
       .then(data => {
@@ -40,7 +40,9 @@ export default class CommentContainer extends Component {
   getExistingComments = commentIds => {
     commentIds.forEach(object => {
       let test = {};
-      let url = `http://localhost:3001/comments/${object.commentId}`;
+      let url = `https://bookbrowser-app-api.herokuapp.com/comments/${
+        object.commentId
+      }`;
       fetch(url)
         .then(resp => resp.json())
         .then(data => {
@@ -63,7 +65,7 @@ export default class CommentContainer extends Component {
 
   createComment = e => {
     e.preventDefault();
-    let url = "http://localhost:3001/comments";
+    let url = "https://bookbrowser-app-api.herokuapp.com/comments";
     let config = {
       method: "POST",
       headers: {
@@ -83,7 +85,7 @@ export default class CommentContainer extends Component {
   };
 
   createCommentBookInstance = commentId => {
-    let url = "http://localhost:3001/bookcommentusers";
+    let url = "https://bookbrowser-app-api.herokuapp.com/bookcommentusers";
     let config = {
       method: "POST",
       headers: {

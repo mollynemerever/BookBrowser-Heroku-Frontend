@@ -21,7 +21,8 @@ export default class PeopleContainer extends Component {
   };
 
   getFollowing = () => {
-    let url = "http://localhost:3001/userfollowerrelationships";
+    let url =
+      "https://bookbrowser-app-api.herokuapp.com/userfollowerrelationships";
     fetch(url)
       .then(resp => resp.json())
       .then(data => {
@@ -37,7 +38,7 @@ export default class PeopleContainer extends Component {
   };
 
   getAllUsers = () => {
-    let url = "http://localhost:3001/users";
+    let url = "https://bookbrowser-app-api.herokuapp.com/users";
     fetch(url)
       .then(resp => resp.json())
       .then(data => {

@@ -20,7 +20,8 @@ class Profile extends Component {
   handleClick(e, following_id) {
     //create or delete relationship
     e.preventDefault();
-    let url = "http://localhost:3001/userfollowerrelationships";
+    let url =
+      "https://bookbrowser-app-api.herokuapp.com/userfollowerrelationships";
     let config = {
       method: "POST",
       headers: {

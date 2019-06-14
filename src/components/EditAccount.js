@@ -24,7 +24,9 @@ export default class EditAccount extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    let url = `http://localhost:3001/users/${this.props.state.currentUser.id}`;
+    let url = `https://bookbrowser-app-api.herokuapp.com/users/${
+      this.props.state.currentUser.id
+    }`;
     let config = {
       method: "PATCH",
       headers: {
